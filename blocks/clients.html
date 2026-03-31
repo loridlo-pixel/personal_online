@@ -1,0 +1,189 @@
+<section class="clients-segment section">
+  <div class="segment-inner container">
+
+    <h2 class="segment-title">Кто обращается к нам</h2>
+    <p class="segment-subtitle">Наши клиенты — компании, которым важно быстро и без рисков решать кадровые задачи</p>
+
+    <div class="segment-grid">
+
+      <!-- 1 -->
+      <div class="segment-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21V10l7 4V10l7 4V10l4 2v9H3z"/>
+            <path d="M9 21v-3"/>
+            <path d="M12 21v-3"/>
+            <path d="M15 21v-3"/>
+          </svg>
+        </div>
+        <h3>Производственные предприятия</h3>
+        <p>Заводы, цеха, мебельные и пищевые фабрики. Им нужны стабильные рабочие при росте объёмов и сезонных пиках.</p>
+        <ul>
+          <li><span class="mark">+</span> Быстрое закрытие смен</li>
+          <li><span class="mark">+</span> Квалифицированные рабочие</li>
+          <li><span class="mark">+</span> Контроль и учёт часов</li>
+        </ul>
+      </div>
+
+      <!-- 2 -->
+      <div class="segment-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13"/>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3>Склады и логистика</h3>
+        <p>Логистические центры и дистрибьюторы. Ищут комплектовщиков, грузчиков и сортировщиков при колебаниях объёмов.</p>
+        <ul>
+          <li><span class="mark">+</span> Выход персонала за 1 день</li>
+          <li><span class="mark">+</span> Прозрачный учёт и табелирование</li>
+          <li><span class="mark">+</span> Гибкие графики под загрузку</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="segment-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+        </div>
+        <h3>Ритейл и FMCG</h3>
+        <p>Сети супермаркетов и магазинов — нуждаются в фасовщиках, кассирах, мерчендайзерах и уборщиках для подмен и пиков.</p>
+        <ul>
+          <li><span class="mark">+</span> Замена без остановки работы</li>
+          <li><span class="mark">+</span> Минимизация простоев</li>
+          <li><span class="mark">+</span> Поддержание чистоты и обслуживания</li>
+        </ul>
+      </div>
+
+      <!-- Остальные карточки (4–8) аналогично… оставляем только stroke через var(--primary) и цвета через переменные -->
+
+    </div>
+
+    <div class="segment-footer">
+      <p>Наши клиенты выбирают нас за <strong>скорость, надёжность и прозрачность</strong>. Мы берём кадровые задачи на себя — вы сосредотачиваетесь на бизнесе.</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.clients-segment {
+  padding: var(--spacing-xl) var(--spacing-md);
+  font-family: var(--font-main);
+  background: radial-gradient(ellipse at top, #002a4f, #001a2f); /* Можно тоже вынести в переменную */
+}
+
+.segment-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.segment-title {
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 700;
+}
+
+.segment-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--spacing-lg);
+  color: var(--text-muted);
+  font-size: var(--fs-text);
+  line-height: 1.6;
+}
+
+.segment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.segment-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.segment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.1);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.segment-card h3 {
+  color: var(--primary);
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.segment-card p {
+  color: #444; /* Можно сделать через var(--text-dark) */
+  line-height: 1.55;
+  margin-bottom: 14px;
+  font-size: var(--fs-small);
+}
+
+.segment-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.segment-card li {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+  font-size: var(--fs-small);
+  color: #333; /* или var(--text-dark) */
+}
+
+.mark {
+  color: var(--primary);
+  font-weight: 700;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.segment-footer {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  font-size: var(--fs-h3);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+@media(max-width:768px){
+  .clients-segment { padding: var(--spacing-lg) var(--spacing-sm); }
+  .segment-grid { gap: 22px; }
+  .segment-card { padding: 24px 20px; }
+}
+
+@media(max-width:480px){
+  .segment-title { font-size: 24px; }
+  .segment-subtitle { font-size: 15px; }
+  .segment-card h3 { font-size: 18px; }
+  .segment-card p { font-size: 14px; }
+}
+</style>

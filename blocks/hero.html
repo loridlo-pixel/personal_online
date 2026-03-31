@@ -1,0 +1,66 @@
+<section class="hero-section section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <h1 class="title">Рост вашего бизнеса начинается здесь!</h1>
+    <p class="text">Более 7000 крупнейших компаний уже используют аутсорсинг</p>
+
+    <form class="hero-form">
+      <input type="text" placeholder="Ваше имя">
+      <input type="tel" placeholder="Телефон">
+      <button class="btn">Позвонить</button>
+    </form>
+  </div>
+</section>
+
+<style>
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  color: var(--text-main);
+  background: url('/assets/hero-bg.png') center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--bg-overlay); /* лёгкий темный слой для читаемости текста */
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: var(--fs-h1);
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-content p {
+  font-size: var(--fs-text);
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-main);
+}
+
+.hero-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.hero-form input {
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: var(--fs-text);
+}
+
+.hero-form button {
+  font-size: var(--fs-text);
+}
+</style>

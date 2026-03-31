@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1a2f;
+      color: white;
+    }
+
+    .block {
+      width: 100%;
+    }
+
+    .loading {
+      opacity: 0.4;
+    }
+
+:root {
+  /* === ЦВЕТА === */
+  --primary: #004aad;
+  --primary-light: #2f6bff;
+  --primary-dark: #002c6a;
+
+  --accent: #00c2ff;
+
+  --bg-main: linear-gradient(135deg, #0b1a2f, #0f2f5c);
+  --bg-card: #ffffff;
+  --bg-overlay: rgba(255,255,255,0.05);
+
+  --text-main: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-muted: #9aa4b2;
+
+  --border: rgba(255,255,255,0.1);
+
+  /* === ШРИФТЫ === */
+  --font-main: 'Inter', Arial, sans-serif;
+
+  --fs-h1: 42px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-text: 16px;
+  --fs-small: 14px;
+
+  /* === ОТСТУПЫ === */
+  --spacing-xs: 6px;
+  --spacing-sm: 12px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+  --spacing-xl: 80px;
+
+  /* === РАДИУСЫ === */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* === ТЕНИ === */
+  --shadow-card: 0 10px 30px rgba(0,0,0,0.2);
+  --shadow-soft: 0 5px 15px rgba(0,0,0,0.1);
+
+  /* === АНИМАЦИИ === */
+  --transition: 0.3s ease;
+}
+
+/* === ГЛОБАЛЬНЫЙ СТИЛЬ === */
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* === ОБЩИЕ КЛАССЫ === */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--spacing-md);
+}
+
+.text {
+  font-size: var(--fs-text);
+  color: var(--text-muted);
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--primary-light);
+}
+</style>
+</head>
+<body>
+
+  <!-- Контейнер -->
+  <div id="app"></div>
+
+  <script>
+    // =========================
+    // 🔧 НАСТРОЙКА БЛОКОВ
+    // =========================
+
+    const blocks = [
+      "/blocks/header.html",
+      "/blocks/hero.html",
+      "/blocks/seo.html"
+      "/blocks/rezultaty.html",
+      "/blocks/footer.html",
+      "/blocks/cookies.html",
+      "/blocks/clients.html",
+      "/blocks/calculator.html"
+    ];
+
+    // =========================
+    // 🚀 ЗАГРУЗКА
+    // =========================
+
+    async function loadBlocks() {
+      const app = document.getElementById("app");
+
+      for (let i = 0; i < blocks.length; i++) {
+        const path = blocks[i];
+
+        const container = document.createElement("div");
+        container.classList.add("block", "loading");
+        app.appendChild(container);
+
+        try {
+          const res = await fetch(path);
+
+          if (!res.ok) throw new Error("Ошибка загрузки");
+
+          const html = await res.text();
+          container.innerHTML = html;
+
+        } catch (e) {
+          container.innerHTML = `
+            <div style="padding:40px;color:red;">
+              Ошибка загрузки блока: ${path}
+            </div>
+          `;
+        }
+
+        container.classList.remove("loading");
+      }
+    }
+
+    loadBlocks();
+
+  </script>
+
+</body>
+</html>
