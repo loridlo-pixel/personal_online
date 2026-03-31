@@ -20,25 +20,22 @@
   justify-content: center;
   min-height: 80vh;
   color: var(--text-main);
-  background: url('/img/hero-bg.png') center/cover no-repeat;
+  background: url('./assets/hero-bg.png') center/cover no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--bg-overlay); /* лёгкий темный слой для читаемости текста */
-}
-/* === затемнение 30% === */
-.hero-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.3); /* 30% чёрного */
+  background: rgba(0, 0, 0, 0.3); /* 30% затемнение */
 }
 
 .hero-content {
   position: relative;
   text-align: center;
   z-index: 1;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .hero-content h1 {
@@ -52,21 +49,55 @@
   color: var(--text-main);
 }
 
+/* === Форма === */
 .hero-form {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: var(--spacing-sm);
+  align-items: center;
+  flex-wrap: wrap; /* добавим возможность переносить на мобильных */
 }
 
 .hero-form input {
-  padding: 12px;
+  padding: 12px 16px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   font-size: var(--fs-text);
+  height: 48px;
+  min-width: 200px;
+  box-sizing: border-box;
+  flex: 1; /* растягиваем поля равномерно */
 }
 
 .hero-form button {
   font-size: var(--fs-text);
+  padding: 12px 24px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0; /* кнопка не сжимается */
 }
+
+.hero-form button:hover {
+  background: var(--primary-light);
+}
+
+/* === Адаптив для мобильных === */
+@media (max-width: 768px) {
+  .hero-form {
+    flex-direction: column; /* поля и кнопка в колонку */
+    gap: var(--spacing-sm);
+  }
+
+  .hero-form input,
+  .hero-form button {
+    width: 100%; /* растянуть на всю ширину контейнера */
+  }
+}
+
 </style>
