@@ -1,5 +1,6 @@
 <header class="site-header">
   <div class="header-container">
+
     <!-- Левое меню -->
     <ul class="nav-links header-left">
       <li><a href="#calc">Рассчитать стоимость</a></li>
@@ -9,7 +10,7 @@
       <li><a href="#faq">FAQ</a></li>
     </ul>
 
-    <!-- Логотип центр -->
+    <!-- Лого -->
     <div class="header-center">
       <a href="#" class="logo">
         <img src="./img/logo.png" alt="Логотип">
@@ -20,16 +21,21 @@
     <div class="header-right">
       <div class="contact-info">
         <a href="tel:+79136855322" class="header-phone">+7 913 685 53 22</a>
-        <a href="#" class="messenger"><img src="telegram.png" alt="Телеграм"></a>
-        <a href="#" class="messenger"><img src="max.png" alt="Max"></a>
+        <a href="#" class="messenger">
+          <img src="https://via.placeholder.com/24" alt="Телеграм">
+        </a>
+        <a href="#" class="messenger">
+          <img src="https://via.placeholder.com/24" alt="WhatsApp">
+        </a>
       </div>
+
       <button class="btn order-btn">Заказать</button>
 
-      <!-- Бургер для мобилки -->
       <button class="burger">
         <span></span><span></span><span></span>
       </button>
     </div>
+
   </div>
 
   <!-- Мобильное меню -->
@@ -41,187 +47,281 @@
       <li><a href="#about">О компании</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
+
     <div class="mobile-contact">
       <a href="tel:+79136855322" class="header-phone">+7 913 685 53 22</a>
-      <a href="#" class="messenger"><img src="https://via.placeholder.com/24" alt="Телеграм"></a>
-      <a href="#" class="messenger"><img src="https://via.placeholder.com/24" alt="WhatsApp"></a>
+
+      <a href="#" class="messenger">
+        <img src="telegram.png" alt="Телеграм">
+      </a>
+
+      <a href="#" class="messenger">
+        <img src="max.png" alt="Max">
+      </a>
+
       <button class="btn order-btn">Заказать</button>
     </div>
   </div>
 </header>
 
+<!-- ================= OUTSOURCING STATS ================= -->
+
+<section id="outsourcing-stats" style="background:#fff;padding:80px 20px;text-align:center;font-family:Inter,sans-serif;">
+  <h2 style="font-size:28px;font-weight:700;margin-bottom:50px;">Результаты аутсорсинга за 2024 год</h2>
+
+  <div class="stats-grid">
+
+    <!-- 1 -->
+    <div class="stat-item">
+      <div class="circle-wrap">
+        <svg class="progress-ring" width="150" height="150">
+          <circle class="progress-ring__circle" r="65" cx="75" cy="75" />
+        </svg>
+        <div class="circle-text">
+          <span class="value" data-target="2450">0</span>
+        </div>
+      </div>
+      <div class="stat-label">Компаний перешли<br>на аутсорсинг</div>
+    </div>
+
+    <!-- 2 -->
+    <div class="stat-item">
+      <div class="circle-wrap">
+        <svg class="progress-ring" width="150" height="150">
+          <circle class="progress-ring__circle" r="65" cx="75" cy="75" />
+        </svg>
+        <div class="circle-text">
+          <span class="value" data-target="18700">0</span>
+        </div>
+      </div>
+      <div class="stat-label">Работников зарегистрировались<br>в компаниях</div>
+    </div>
+
+    <!-- 3 -->
+    <div class="stat-item">
+      <div class="circle-wrap">
+        <svg class="progress-ring" width="150" height="150">
+          <circle class="progress-ring__circle" r="65" cx="75" cy="75" />
+        </svg>
+        <div class="circle-text">
+          <span class="value" data-target="52340">0</span>
+        </div>
+      </div>
+      <div class="stat-label">Заявок выполнено</div>
+    </div>
+
+  </div>
+</section>
+
 <style>
 :root {
-  /* Цвета */
-  --primary: #004aad;
-  --primary-light: #2f6bff;
-  --primary-dark: #002c6a;
-  --accent: #00c2ff;
-  --text-main: #ffffff;
-  --text-main1: #000000;
-  --text-muted: #9aa4b2;
-
-  /* Радиусы */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-
-  /* Отступы */
-  --spacing-sm: 12px;
-  --spacing-md: 20px;
-
-  /* Тени */
-  --shadow-soft: 0 5px 15px rgba(0,0,0,0.1);
+  --accent:#00c2ff;
+  --text:#000;
 }
 
+/* HEADER */
 .site-header {
-  width: 100%;
-  background: #fff;
-  color: var(--text-main1);
-  position: relative;
-  z-index: 100;
+  background:#fff;
+  position:relative;
+  z-index:100;
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--spacing-sm) var(--spacing-md);
-  position: relative;
-  gap: var(--spacing-md);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto;
+  padding:15px 20px;
+  position:relative;
 }
 
-/* Левое меню */
+/* MENU */
 .nav-links {
-  display: flex;
-  gap: var(--spacing-md);
-  list-style: none;
-  padding: 0;
-  margin-right: 40px;
-}
-.nav-links li a {
-  color: var(--text-main1);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition, 0.3s ease);
-}
-.nav-links li a:hover {
-  color: var(--accent);
+  display:flex;
+  gap:20px;
+  list-style:none;
 }
 
-/* Логотип центрирован по экрану */
+.nav-links a {
+  color:#000;
+  text-decoration:none;
+}
+
+/* CENTER LOGO */
 .header-center {
-  position: absolute;
-  left: 100%;
-  transform: translateX(-50%);
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
 }
+
 .header-center img {
-  max-height: 50px;
+  height:100px;
+  width:auto;
 }
 
-/* Правый блок */
+/* RIGHT */
 .header-right {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
+
 .contact-info {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
-.contact-info a {
-  color: var(--text-main1);
-  text-decoration: none;
+
+/* ICONS 30px */
+.contact-info .messenger img {
+  width:30px;
+  height:30px;
+  object-fit:contain;
 }
+
+/* BUTTON */
 .order-btn {
-  background: var(--accent);
-  border: none;
-  padding: 10px var(--spacing-md);
-  border-radius: var(--radius-md);
-  color: var(--text-main1);
-  cursor: pointer;
-  transition: var(--transition, 0.3s ease);
-}
-.order-btn:hover {
-  background: var(--primary-light);
+  background:var(--accent);
+  border:none;
+  padding:10px 20px;
+  border-radius:12px;
+  cursor:pointer;
 }
 
-/* Бургер */
+/* BURGER */
 .burger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  display:none;
+  flex-direction:column;
+  gap:4px;
+  background:none;
+  border:none;
 }
+
 .burger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background: var(--text-main1);
-  border-radius: 2px;
+  width:25px;
+  height:3px;
+  background:#000;
 }
 
-/* Мобильное меню */
+/* MOBILE */
 .mobile-menu {
-  display: none;
-  background: var(--primary-dark);
-  padding: var(--spacing-md);
-}
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.mobile-menu ul li a {
-  display: block;
-  padding: var(--spacing-sm) 0;
-  color: var(--text-main1);
-  text-decoration: none;
-}
-.mobile-contact {
-  margin-top: var(--spacing-sm);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-.mobile-contact .header-phone,
-.mobile-contact .messenger,
-.mobile-contact .order-btn {
-  width: 100%;
-  text-align: center;
+  display:none;
+  background:#111;
+  color:#fff;
+  padding:20px;
 }
 
-/* === Адаптив === */
-@media (max-width: 1024px) {
-  .nav-links {
-    display: none; /* скрываем меню на планшетах/мобилках */
-  }
+.mobile-menu.active {
+  display:block;
 }
 
-@media (max-width: 768px) {
-  .header-right .contact-info,
-  .order-btn {
-    display: none;
-  }
-  .burger {
-    display: flex;
-  }
-  .mobile-menu.active {
-    display: block;
-  }
+/* STATS */
+.stats-grid {
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+}
+
+.circle-wrap {
+  position:relative;
+  width:150px;
+  height:150px;
+  margin:0 auto;
+}
+
+.circle-text {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:22px;
+  font-weight:700;
+}
+
+.progress-ring__circle {
+  fill:none;
+  stroke:#ff7b00;
+  stroke-width:10;
+  stroke-linecap:round;
+  transform:rotate(-90deg);
+  transform-origin:50% 50%;
+  stroke-dasharray:408;
+  stroke-dashoffset:408;
+}
+
+.stat-label {
+  margin-top:20px;
+  font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:1024px){
+  .nav-links{display:none;}
+}
+
+@media(max-width:768px){
+  .contact-info,.order-btn{display:none;}
+  .burger{display:flex;}
 }
 </style>
 
 <script>
-// Бургер для мобилки
-const burger = document.querySelector('.burger');
-const mobileMenu = document.querySelector('.mobile-menu');
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector("#outsourcing-stats");
+  const circles = document.querySelectorAll(".progress-ring__circle");
+  const values = document.querySelectorAll(".value");
 
-burger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('active');
+  let animated = false;
+
+  function animate() {
+    if (animated) return;
+    animated = true;
+
+    values.forEach((val, index) => {
+      const target = parseInt(val.dataset.target);
+      let current = 0;
+
+      const duration = 2500;
+      const frameRate = 20;
+      const totalFrames = duration / frameRate;
+      const step = target / totalFrames;
+
+      const circle = circles[index];
+      const radius = 65;
+      const circumference = 2 * Math.PI * radius;
+
+      circle.style.strokeDasharray = circumference;
+      circle.style.strokeDashoffset = circumference;
+
+      let progress = 0;
+
+      const interval = setInterval(() => {
+        current += step;
+        progress += circumference / totalFrames;
+
+        if (current >= target) {
+          current = target;
+          progress = circumference;
+          clearInterval(interval);
+        }
+
+        val.textContent = Math.floor(current).toLocaleString('ru-RU');
+        circle.style.strokeDashoffset = circumference - progress;
+      }, frameRate);
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(section);
 });
 </script>
