@@ -1,128 +1,49 @@
-<section id="outsourcing-stats" class="section">
-  <h2>Результаты аутсорсинга за 2025 год</h2>
+<section id="outsourcing-stats" style="background:#ffffff;padding:80px 20px;color:#222;text-align:center;font-family:'Inter',sans-serif;">
+  <h2 style="font-size:28px;font-weight:700;margin-bottom:50px;color: #222">Результаты аутсорсинга за 2024 год</h2>
 
-  <div class="stats-grid">
+  <div class="stats-grid" style="display:flex;flex-wrap:wrap;justify-content:center;gap:60px;max-width:1000px;margin:0 auto;">
 
     <!-- 1 -->
-    <div class="stat-item">
+    <div class="stat-item" style="text-align:center;">
       <div class="circle-wrap">
         <svg class="progress-ring" width="150" height="150">
-          <circle class="progress-ring__circle" stroke="var(--primary)" stroke-width="10" fill="transparent" r="65" cx="75" cy="75"/>
+          <circle class="progress-ring__circle" stroke="#ff7b00" stroke-width="10" fill="transparent" r="65" cx="75" cy="75" stroke-linecap="round" style="transform:rotate(-90deg);transform-origin:50% 50%;stroke-dasharray:408;stroke-dashoffset:408"/>
         </svg>
         <div class="circle-text">
-          <span class="value" data-target="3849">0</span>
+          <span class="value" data-target="2450">0</span> 
         </div>
       </div>
-      <div class="stat-label">Компаний перешли<br>на аутсорсинг</div>
+      <div style="margin-top:20px;font-weight:600;">Компаний перешли<br>на аутсорсинг</div>
     </div>
 
     <!-- 2 -->
-    <div class="stat-item">
+    <div class="stat-item" style="text-align:center;">
       <div class="circle-wrap">
         <svg class="progress-ring" width="150" height="150">
-          <circle class="progress-ring__circle" stroke="var(--primary)" stroke-width="10" fill="transparent" r="65" cx="75" cy="75"/>
+          <circle class="progress-ring__circle" stroke="#ff7b00" stroke-width="10" fill="transparent" r="65" cx="75" cy="75" stroke-linecap="round" style="transform:rotate(-90deg);transform-origin:50% 50%;stroke-dasharray:408;stroke-dashoffset:408"/>
         </svg>
         <div class="circle-text">
-          <span class="value" data-target="72565">0</span>
+          <span class="value" data-target="18700">0</span>
         </div>
       </div>
-      <div class="stat-label">Работников зарегистрировались<br>в компаниях по аутсорсу</div>
+      <div style="margin-top:20px;font-weight:600;">Работников зарегистрировались<br>в компаниях по аутсорсу</div>
     </div>
 
     <!-- 3 -->
-    <div class="stat-item">
+    <div class="stat-item" style="text-align:center;">
       <div class="circle-wrap">
         <svg class="progress-ring" width="150" height="150">
-          <circle class="progress-ring__circle" stroke="var(--primary)" stroke-width="10" fill="transparent" r="65" cx="75" cy="75"/>
+          <circle class="progress-ring__circle" stroke="#ff7b00" stroke-width="10" fill="transparent" r="65" cx="75" cy="75" stroke-linecap="round" style="transform:rotate(-90deg);transform-origin:50% 50%;stroke-dasharray:408;stroke-dashoffset:408"/>
         </svg>
         <div class="circle-text">
-          <span class="value" data-target="42517125">0</span>
+          <span class="value" data-target="52340">0</span>
         </div>
       </div>
-      <div class="stat-label">Заявок выполнено<br>в рамках контрактов</div>
+      <div style="margin-top:20px;font-weight:600;">Заявок выполнено<br>в рамках контрактов</div>
     </div>
 
   </div>
 </section>
-
-<style>
-#outsourcing-stats {
-  background: radial-gradient(ellipse at top, var(--bg-dark), var(--bg-darker));
-  padding: var(--spacing-xl) var(--spacing-md);
-  color: var(--text-main);
-  text-align: center;
-  font-family: var(--font-main);
-}
-
-#outsourcing-stats h2 {
-  font-size: clamp(26px, 4vw, 32px);
-  font-weight: 700;
-  margin-bottom: var(--spacing-xl);
-  color: var(--text-main);
-}
-
-.stats-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.stat-item {
-  text-align: center;
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  padding: 25px 20px;
-  box-shadow: var(--shadow-card);
-  width: 180px;
-}
-
-.circle-wrap {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 15px;
-}
-
-.progress-ring__circle {
-  stroke-dasharray: 408;
-  stroke-dashoffset: 408;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.3s linear;
-}
-
-.circle-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: var(--fs-h2);
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.stat-label {
-  margin-top: 15px;
-  font-weight: 600;
-  font-size: var(--fs-small);
-  color: var(--text-dark);
-}
-
-@media (max-width: 700px){
-  .stats-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-  }
-  .stat-item {
-    width: 80%;
-  }
-}
-</style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -138,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     values.forEach((val, index) => {
       const target = parseInt(val.dataset.target);
       let current = 0;
-      const duration = 2000;
+      const duration = 3000;
       const frameRate = 30;
       const totalFrames = duration / frameRate;
       const step = target / totalFrames;
@@ -178,3 +99,26 @@ document.addEventListener("DOMContentLoaded", () => {
   checkAnimation();
 });
 </script>
+
+<style>
+.circle-wrap {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  font-weight: 700;
+}
+@media (max-width: 700px){
+  .stats-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
