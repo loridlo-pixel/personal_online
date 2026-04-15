@@ -47,20 +47,22 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector("#outsourcing-stats");
   const circles = document.querySelectorAll(".progress-ring__circle");
   const values = document.querySelectorAll(".value");
-  const section = document.querySelector("#outsourcing-stats");
+
   let animated = false;
 
-  function animateNumbers() {
+  function animate() {
     if (animated) return;
     animated = true;
 
     values.forEach((val, index) => {
       const target = parseInt(val.dataset.target);
       let current = 0;
-      const duration = 3000;
-      const frameRate = 30;
+
+      const duration = 2500;
+      const frameRate = 20;
       const totalFrames = duration / frameRate;
       const step = target / totalFrames;
 
@@ -68,35 +70,39 @@ document.addEventListener("DOMContentLoaded", () => {
       const radius = 65;
       const circumference = 2 * Math.PI * radius;
 
+      circle.style.strokeDasharray = circumference;
+      circle.style.strokeDashoffset = circumference;
+
       let progress = 0;
+
       const interval = setInterval(() => {
         current += step;
         progress += circumference / totalFrames;
+
         if (current >= target) {
           current = target;
           progress = circumference;
           clearInterval(interval);
         }
+
         val.textContent = Math.floor(current).toLocaleString('ru-RU');
         circle.style.strokeDashoffset = circumference - progress;
       }, frameRate);
     });
   }
 
-  function isInView(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom > 0;
-  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate();
+        observer.disconnect();
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
 
-  function checkAnimation() {
-    if (isInView(section)) {
-      animateNumbers();
-      window.removeEventListener("scroll", checkAnimation);
-    }
-  }
-
-  window.addEventListener("scroll", checkAnimation);
-  checkAnimation();
+  observer.observe(section);
 });
 </script>
 
